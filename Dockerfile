@@ -9,8 +9,8 @@ RUN useradd --no-log-init --system --create-home --home-dir /server --gid hlds  
 USER hlds
 
 # 3) Install HLDS 3.0.1.6
-COPY install/hlds_l3016.tar.gz /server
-RUN tar -xzf hlds_l3016.tar.gz -C /server && rm hlds_l3016.tar.gz
+COPY install/hlds_l3016.tar.gz /server/
+RUN tar -xzf /server/hlds_l3016.tar.gz -C /server && rm /server/hlds_l3016.tar.gz
 
 #Copy required files
 COPY install/nowon.so /server/hlds_l/

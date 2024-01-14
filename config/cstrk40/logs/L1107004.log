@@ -1,0 +1,75 @@
+L 11/07/1999 - 20:02:46: Log file started.
+L 11/07/1999 - 20:02:46: Spawning server "de_prodigy"
+L 11/07/1999 - 20:02:46: server cvars start
+L 11/07/1999 - 20:02:46: "mp_friendly_grenade_damage" = "1"
+L 11/07/1999 - 20:02:46: "mp_c4timer" = "30"
+L 11/07/1999 - 20:02:46: "mp_roundtime" = "5"
+L 11/07/1999 - 20:02:46: "mp_allowmonsters" = "0"
+L 11/07/1999 - 20:02:46: "mp_teamlist" = "hgrunt;scientist"
+L 11/07/1999 - 20:02:46: "decalfrequency" = "30"
+L 11/07/1999 - 20:02:46: "mp_autocrosshair" = "1"
+L 11/07/1999 - 20:02:46: "mp_flashlight" = "0"
+L 11/07/1999 - 20:02:46: "mp_footsteps" = "1"
+L 11/07/1999 - 20:02:46: "mp_forcerespawn" = "1"
+L 11/07/1999 - 20:02:46: "mp_weaponstay" = "0"
+L 11/07/1999 - 20:02:46: "mp_falldamage" = "0"
+L 11/07/1999 - 20:02:46: "mp_friendlyfire" = "0"
+L 11/07/1999 - 20:02:46: "mp_limitteams" = "1"
+L 11/07/1999 - 20:02:46: "mp_lowlag" = "1"
+L 11/07/1999 - 20:02:46: "mp_timelimit" = "45"
+L 11/07/1999 - 20:02:46: "mp_fraglimit" = "0"
+L 11/07/1999 - 20:02:46: "sv_maxrate" = "0"
+L 11/07/1999 - 20:02:46: "sv_minrate" = "0"
+L 11/07/1999 - 20:02:46: "sv_allowupload" = "1"
+L 11/07/1999 - 20:02:46: "sv_allowdownload" = "1"
+L 11/07/1999 - 20:02:46: "sv_upload_maxsize" = "0"
+L 11/07/1999 - 20:02:46: "sv_spectatormaxspeed" = "500"
+L 11/07/1999 - 20:02:46: "sv_spectalk" = "1"
+L 11/07/1999 - 20:02:46: "sv_maxspectators" = "8"
+L 11/07/1999 - 20:02:46: "sv_cheats" = "0"
+L 11/07/1999 - 20:02:46: "sv_clienttrace" = "1"
+L 11/07/1999 - 20:02:46: "sv_timeout" = "65"
+L 11/07/1999 - 20:02:46: "sv_waterfriction" = "1"
+L 11/07/1999 - 20:02:46: "sv_wateraccelerate" = "10"
+L 11/07/1999 - 20:02:46: "sv_airaccelerate" = "10"
+L 11/07/1999 - 20:02:46: "sv_airmove" = "1"
+L 11/07/1999 - 20:02:46: "sv_bounce" = "1"
+L 11/07/1999 - 20:02:46: "sv_clipmode" = "0"
+L 11/07/1999 - 20:02:46: "sv_stepsize" = "18"
+L 11/07/1999 - 20:02:46: "sv_accelerate" = "10"
+L 11/07/1999 - 20:02:46: "sv_maxspeed" = "320"
+L 11/07/1999 - 20:02:46: "sv_stopspeed" = "100"
+L 11/07/1999 - 20:02:46: "edgefriction" = "2"
+L 11/07/1999 - 20:02:46: "sv_friction" = "4"
+L 11/07/1999 - 20:02:46: "sv_gravity" = "800"
+L 11/07/1999 - 20:02:46: "sv_aim" = "0"
+L 11/07/1999 - 20:02:46: "sv_password" = ""
+L 11/07/1999 - 20:02:46: "pausable" = "0"
+L 11/07/1999 - 20:02:46: "coop" = "0"
+L 11/07/1999 - 20:02:46: "deathmatch" = "1"
+L 11/07/1999 - 20:02:46: "mp_logecho" = "1"
+L 11/07/1999 - 20:02:46: "mp_logfile" = "1"
+L 11/07/1999 - 20:02:46: "cmdline" = "0"
+L 11/07/1999 - 20:02:46: server cvars end
+L 11/07/1999 - 20:02:48: Map CRC "-1745717830"
+L 11/07/1999 - 20:02:57: "cliffe<1>" has entered the game
+L 11/07/1999 - 20:03:08: "cliffe<1>" killed self with world
+L 11/07/1999 - 20:05:34: "[DD]Irish_Dawg<2><WON:313409>" connected, address "207.227.121.168:27005"
+L 11/07/1999 - 20:05:35: "[DD]Irish_Dawg<3><WON:313409>" connected, address "207.227.121.168:27005"
+L 11/07/1999 - 20:05:47: "[DD]Irish_Dawg<4><WON:313409>" connected, address "207.227.121.168:27005"
+L 11/07/1999 - 20:05:59: "-:KiLLaH4LiFe:-<5><WON:919099>" connected, address "24.65.228.219:27005"
+L 11/07/1999 - 20:06:10: "[DD]Irish_Dawg<4>" killed self with world
+L 11/07/1999 - 20:06:11: "[DD]Irish_Dawg<4>" has entered the game
+L 11/07/1999 - 20:06:16: "-:KiLLaH4LiFe:-<5>" has entered the game
+L 11/07/1999 - 20:06:35: "-:KiLLaH4LiFe:-<5>" killed "cliffe<1>" with usp
+L 11/07/1999 - 20:07:15: "-:KiLLaH4LiFe:-<5>" killed "cliffe<1>" with p228
+L 11/07/1999 - 20:07:48: "[HPR]Striker<6><WON:6929969>" connected, address "38.31.49.54:27005"
+L 11/07/1999 - 20:08:04: "Young-gun<6>" killed self with world
+L 11/07/1999 - 20:08:04: "Young-gun<6>" has entered the game
+L 11/07/1999 - 20:08:08: "Young-gun<6>" changed name to "Young-gun<6>"
+L 11/07/1999 - 20:08:31: "Radlep<7><WON:787469>" connected, address "209.195.226.252:27005"
+L 11/07/1999 - 20:08:37: "Shaggy_C<8><WON:6896439>" connected, address "171.211.56.230:27005"
+L 11/07/1999 - 20:08:40: "-:KiLLaH4LiFe:-<5>" killed "cliffe<1>" with deagle
+L 11/07/1999 - 20:08:49: "Shaggy_C<8>" has entered the game
+L 11/07/1999 - 20:08:54: "Radlep<7>" has entered the game
+L 11/07/1999 - 20:08:56: "p
