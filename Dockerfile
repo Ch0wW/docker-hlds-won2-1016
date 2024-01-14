@@ -1,7 +1,7 @@
 FROM i386/debian:12.4-slim
 
 # 1) INSTALL BASICS
-RUN apt-get update && apt-get install -y wget libc6 libstdc++6 --force-yes
+RUN apt-get update && apt-get install -y wget libc6 libstdc++6 xxd --force-yes
 
 # 2) Create user
 RUN groupadd -r hlds
@@ -25,7 +25,8 @@ USER root
 COPY ./install/hlds_start /server/hlds_l/
 COPY ./install/nowon.so /server/hlds_l/
 COPY ./install/nowon_patch.sh /server/hlds_l/
-RUN chmod +x nowon_patch.sh && ./nowon_patch.sh
+RUN chmod +x nowon_patch.sh
+RUN ./nowon_patch.sh
 
 #Install WON2 masterserver
 COPY config/valve/* ./valve/

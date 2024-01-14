@@ -22,7 +22,7 @@ A docker image that automates setting up a 1.0.1.6 Half-Life dedicated server, u
 
 Simply edit the `docker-compose.yml` to add or modify anything you require.
 
-If you need to change the port of your server, change all occurences (= in `ports` and in the `command` sections)
+If you need to change the port of your server, change all occurences (= in `ports` and in the `command` sections). Change also the `user` token so that it is checking with the user and group running the container.
 
 **Example of Docker file**
 ```
@@ -33,6 +33,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    user: "1000:1000"
     volumes:
       - ./config/cstrk52:/server/hlds_l/cstrk52 
       - ./config/cstrk61:/server/hlds_l/cstrk61
@@ -42,7 +43,7 @@ services:
       - 27015:27015
       - 27015:27015/udp
     command:
-      - ./hlds_run -port 27015 -game cstrk61 +map de_dust +maxplayers 16
+      - -port 27015 -game cstrk61 +map de_dust +maxplayers 16
 
 ```
 

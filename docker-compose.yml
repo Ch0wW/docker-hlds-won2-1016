@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    user: "1000:1000" # <- Change this to your UID:GID
     volumes:
       - ./config/cstrk52:/server/hlds_l/cstrk52 
       - ./config/cstrk61:/server/hlds_l/cstrk61
