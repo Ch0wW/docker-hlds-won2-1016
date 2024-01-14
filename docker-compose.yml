@@ -14,4 +14,4 @@ services:
       - 27015:27015
       - 27015:27015/udp
     command:
-      - ./hlds_run -port 27015 -game cstrk61 +map de_dust +maxplayers 16
+      - -port 27015 -game cstrk61 +map de_dust +maxplayers 16 +sv_lan 1

@@ -32,10 +32,3 @@ ModServer
 {
 	mods.won2.steamlessproject.nl:27011
 }
-
-Secure
-{
-	hlauth.won2.steamlessproject.nl:27012
-	hlauth2.won2.steamlessproject.nl:27012
-	hlauth3.won2.steamlessproject.nl:27012
-}
