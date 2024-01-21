@@ -9,7 +9,7 @@
 
 # setup the libraries, local dir first!
 export LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
-export LD_PRELOAD="./nowon.so"
+export LD_PRELOAD="./nowon.so ./booster.so"
 
 init() {
 	# Initialises the various variables
@@ -115,9 +115,9 @@ init() {
 	fi
 
 	if test 0 -eq $PID_FILE_SET && test -n "$PID_FILE"; then
-		HL_CMD="$HL -noipx +sv_lan 1 $PARAMS -pidfile $PID_FILE"
+		HL_CMD="$HL -noipx +sv_lan 1 +sys_ticrate 1000 +sv_maxupdaterate 100 $PARAMS -pidfile $PID_FILE"
 	else
-		HL_CMD="$HL -noipx +sv_lan 1 $PARAMS"
+		HL_CMD="$HL -noipx +sv_lan 1 +sys_ticrate 1000 +sv_maxupdaterate 100 $PARAMS"
 	fi
 }
 
