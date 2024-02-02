@@ -1,7 +1,7 @@
 FROM i386/debian:12.4-slim
 
 # 1) INSTALL BASICS
-RUN apt-get update && apt-get install -y wget libc6 libstdc++6 xxd --force-yes
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget libc6 libstdc++6 xxd --force-yes
 
 # 2) Create user
 RUN groupadd -r hlds

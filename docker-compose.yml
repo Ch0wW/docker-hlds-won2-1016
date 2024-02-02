@@ -10,9 +10,10 @@ services:
       - ./config/cstrk52:/server/hlds_l/cstrk52 
       - ./config/cstrk61:/server/hlds_l/cstrk61
       - ./config/cstrk40:/server/hlds_l/cstrk40 
-
     ports:
       - 27015:27015
       - 27015:27015/udp
     command:
-      - -port 27015 -game cstrk61 +map de_dust +maxplayers 16 +sv_lan 1
+      - -port 27015 -game cstrk61 +map de_dust +maxplayers 16
+    security_opt:
+      - no-new-privileges:true

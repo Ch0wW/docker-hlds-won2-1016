@@ -51,12 +51,13 @@ services:
       - ./config/cstrk52:/server/hlds_l/cstrk52 
       - ./config/cstrk61:/server/hlds_l/cstrk61
       - ./config/cstrk40:/server/hlds_l/cstrk40 
-
     ports:
       - 27015:27015
       - 27015:27015/udp
     command:
-      - -port 27015 -game cstrk61 +map de_dust +maxplayers 16 +sv_lan 1
+      - -port 27015 -game cstrk61 +map de_dust +maxplayers 16
+    security_opt:
+      - no-new-privileges:true
 ```
 
 Once done, just execute `docker-compose up` to make sure everything works as intended, and you should be good to go.
@@ -70,6 +71,9 @@ Simply go to the `config` folder, and modify the required folders you wish.
 - `config/cstrk52` is for Counter-Strike Beta 5.2.
 - `config/cstrk61` is for Counter-Strike Beta 6.1.
 - `config/valve` is for Half-Life. **However, since no playerbase really exists for Half-Life WON2 (people play it on STEAM instead), this only includes the WON2 masterservers.** 
+
+### Do I have to include +sv_lan 1?
+Nope! It's already included inside `hlds_start` (which is basically a renamed `hlds_run` script), so you don't have to!
 
 -----------
 
