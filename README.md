@@ -51,6 +51,7 @@ services:
       - ./config/cstrk52:/server/hlds_l/cstrk52 
       - ./config/cstrk61:/server/hlds_l/cstrk61
       - ./config/cstrk40:/server/hlds_l/cstrk40 
+      - ./config/cstrk31:/server/hlds_l/cstrk31
     ports:
       - 27015:27015
       - 27015:27015/udp
@@ -67,9 +68,10 @@ If you need to rebuild the image (for instance for testing or to add a few addit
 ### Customisation
 Simply go to the `config` folder, and modify the required folders you wish.
 
-- `config/cstrk40` is for Counter-Strike Beta 4.0.
-- `config/cstrk52` is for Counter-Strike Beta 5.2.
 - `config/cstrk61` is for Counter-Strike Beta 6.1.
+- `config/cstrk52` is for Counter-Strike Beta 5.2.
+- `config/cstrk40` is for Counter-Strike Beta 4.0.
+- `config/cstrk31` is for Counter-Strike Beta 3.1.
 - `config/valve` is for Half-Life. **However, since no playerbase really exists for Half-Life WON2 (people play it on STEAM instead), this only includes the WON2 masterservers.** 
 
 ### Do I have to include +sv_lan 1?

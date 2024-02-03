@@ -10,6 +10,7 @@ services:
       - ./config/cstrk52:/server/hlds_l/cstrk52 
       - ./config/cstrk61:/server/hlds_l/cstrk61
       - ./config/cstrk40:/server/hlds_l/cstrk40 
+      - ./config/cstrk31:/server/hlds_l/cstrk31 
     ports:
       - 27015:27015
       - 27015:27015/udp
