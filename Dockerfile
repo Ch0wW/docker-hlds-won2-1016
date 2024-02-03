@@ -24,7 +24,7 @@ USER root
 # INSTALL modified HLDS_RUN
 COPY ./install/hlds_start /server/hlds_l/
 COPY ./install/nowon.so /server/hlds_l/
-COPY ./install_booster.so /server/hlds_l/
+COPY ./install/booster.so /server/hlds_l/
 COPY ./install/nowon_patch.sh /server/hlds_l/
 
 RUN chmod +x nowon_patch.sh
