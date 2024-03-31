@@ -3,7 +3,9 @@
 [![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://patreon.baseq.fr)
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P27UZHV)
 
-This project generates a Docker image that automates setting up a Half-Life dedicated server, version 1.0.1.6, using the WON2 protocol. This docker image also includes several popular mods that are still played using this version which are Counter-Strike Beta 3.1, Beta 4.0, Beta 5.2, and Beta 6.1.
+This project creates a Docker image that automates setting up a Half-Life dedicated server, version 1.0.1.6, using the WON2 protocol. This docker image also includes several popular Counter-Strike beta mods that are still played by the community, which are Counter-Strike Beta 3.1, Beta 4.0, Beta 5.2, and Beta 6.1.
+
+**Please note this project is done independently of CS-Legacy or any other known retro-CS communities.**
 
 #### Related projects
 - [Docker image for HLDS 1.1.1.0](https://github.com/Ch0wW/docker-hlds-won2)
@@ -16,13 +18,14 @@ This project generates a Docker image that automates setting up a Half-Life dedi
 
 ### Why this docker ?
 
-There are a few communities around the World that still play older Counter-Strike 1.5 builds online. However, I have noticed that some Linux distributions are not friendly with this version of HLDS due to potential library incompatibilities, and may instantly crash upon starting.
+There are a few communities around the World that still play the betas of Counter-Strike online. However, I have noticed that community-wise, noone took time to create an easy way to create servers in a matters of seconds. As a result, creating a server is messy and unreliable, which is not really a good way to bring new players. 
 
-A workaround was found since then, but I still wanted to provide a ready to use image for preservation purposes. Since Docker allows creating "*sandboxed*" environments using other versions of Linux, I created this project.
+This project makes sure everyone can try out these versions of Counter-Strike in a very simple and configurable way.
 
 ### Features
 * Creates a barebones HLDS Environment using Debian (i386), using vanilla files and security patches only when applicable.
 * Server settings can be configured without the requirement of rebuilding the docker image (with the exception of Half-Life 1)
+* Everything is 100% vanilla, with the only exception of the custom masterservers that the community are using.
 
 ### Included mods
 - Counter-Strike beta 6.1
@@ -75,8 +78,16 @@ Simply go to the `config` folder, and modify the required folders you wish.
 - `config/cstrk31` is for Counter-Strike Beta 3.1.
 - `config/valve` is for Half-Life. **However, since no playerbase really exists for Half-Life WON2 (people play it on STEAM instead), this only includes the WON2 masterservers.** 
 
+# FAQ
+
 ### Do I have to include +sv_lan 1?
 Nope! It's already included inside `hlds_start` (which is basically a renamed `hlds_run` script), so you don't have to!
+
+### Will this work natively with that Half-Life 1.0.1.6 package I found online?
+Of course! The server will be spread to both the WON2 and the Order of Phalanx masterservers!
+
+### Why is there no presence of CS Beta 1.x, 2.x?
+Because these versions have no known existance of Linux builds, that this project is based on! You can verify them all on this [GitHub repository](https://github.com/Ch0wW/counterstrike-betas) if you need more information.
 
 -----------
 
