@@ -18,9 +18,9 @@ This project creates a Docker image that automates setting up a Half-Life dedica
 
 ### Why this docker ?
 
-There are a few communities around the World that still play the betas of Counter-Strike online. However, I have noticed that community-wise, noone took time to create an easy way to create servers in a matters of seconds. As a result, creating a server is messy and unreliable, which is not really a good way to bring new players. 
+There are a few communities around the World that still play the betas of Counter-Strike online. However, I have noticed that community-wise, noone took time to create an easy way to create servers in a matter of seconds. As a result, creating a server is messy and unreliable, which is not really a good way to bring new players. 
 
-This project makes sure everyone can try out these versions of Counter-Strike in a very simple and configurable way.
+This project makes sure everyone can host these versions of Counter-Strike in a very simple and configurable way.
 
 ### Features
 * Creates a barebones HLDS Environment using Debian (i386), using vanilla files and security patches only when applicable.
@@ -67,7 +67,7 @@ services:
 
 Once done, just execute `docker-compose up` to make sure everything works as intended, and you should be good to go.
 
-If you need to rebuild the image (for instance for testing or to add a few additional things), just type `docker-compose build` and you should be good to go.
+If you need to rebuild the image (to add a few additional things for instance), just type `docker-compose build` and you should be good to go.
 
 ### Customisation
 Simply go to the `config` folder, and modify the required folders you wish.
