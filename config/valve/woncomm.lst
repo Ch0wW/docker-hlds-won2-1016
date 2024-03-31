@@ -19,13 +19,13 @@ Auth
 
 Master
 {
+	hlmaster.order-of-phalanx.net:27010
+	hlmaster2.order-of-phalanx.net:27010
+	hlmaster3.order-of-phalanx.net:27010
 	master.won2.steamlessproject.nl:27010
 	master4.won2.steamlessproject.nl:27010
 	master2.won2.steamlessproject.nl:27010
 	master3.won2.steamlessproject.nl:27010
-	hlmaster.order-of-phalanx.net:27010
-	hlmaster2.order-of-phalanx.net:27010
-	hlmaster3.order-of-phalanx.net:27010
 }
 
 ModServer
