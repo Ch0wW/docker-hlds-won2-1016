@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.5"
 
 services:
   hlds:
@@ -17,4 +17,4 @@ services:
     command:
       - -port 27015 -game cstrk61 +map de_dust +maxplayers 16
     security_opt:
-      - no-new-privileges:true
+      - no-new-privileges:1

@@ -43,7 +43,7 @@ Change also the `user` token so that it is checking with the user and group runn
 
 **Example of Docker file**
 ```yml
-version: "3.0"
+version: "3.5"
 
 services:
   hlds:
@@ -62,12 +62,12 @@ services:
     command:
       - -port 27015 -game cstrk61 +map de_dust +maxplayers 16
     security_opt:
-      - no-new-privileges:true
+      - no-new-privileges:1
 ```
 
-Once done, just execute `docker-compose up` to make sure everything works as intended, and you should be good to go.
+Once done, just execute `docker compose up` to make sure everything works as intended, and you should be good to go.
 
-If you need to rebuild the image (to add a few additional things for instance), just type `docker-compose build` and you should be good to go.
+If you need to rebuild the image (to add a few additional things for instance), just type `docker compose build` and you should be good to go.
 
 ### Customisation
 Simply go to the `config` folder, and modify the required folders you wish.
@@ -87,7 +87,7 @@ Nope! It's already included inside `hlds_start` (which is basically a renamed `h
 Of course! The server will be spread to both the WON2 and the Order of Phalanx masterservers!
 
 ### Why is there no presence of CS Beta 1.x, 2.x?
-Because these versions have no known existance of Linux builds, that this project is based on! You can verify them all on this [GitHub repository](https://github.com/Ch0wW/counterstrike-betas) if you need more information.
+Simply because these versions do not have Linux builds available! You can verify them all on this [GitHub repository](https://github.com/Ch0wW/counterstrike-betas) if you need more information.
 
 -----------
 
