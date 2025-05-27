@@ -41,7 +41,7 @@ If you need to change the port of your server, change all occurences of `27015` 
 
 Change also the `user` token so that it is checking with the user and group running the container, to avoid upload issues or potential permission problems.
 
-**Example of Docker file**
+**Example of Docker-Compose file**
 ```yml
 version: "3.5"
 
