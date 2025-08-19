@@ -43,8 +43,6 @@ Change also the `user` token so that it is checking with the user and group runn
 
 **Example of Docker-Compose file**
 ```yml
-version: "3.5"
-
 services:
   hlds:
     build: .
