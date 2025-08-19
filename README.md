@@ -47,9 +47,8 @@ version: "3.5"
 
 services:
   hlds:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
+    image: "hlds1016"
     user: "1000:1000" # <- Change this to your UID:GID
     volumes:
       - ./config/cstrk52:/server/hlds_l/cstrk52 
@@ -57,7 +56,6 @@ services:
       - ./config/cstrk40:/server/hlds_l/cstrk40 
       - ./config/cstrk31:/server/hlds_l/cstrk31
     ports:
-      - 27015:27015
       - 27015:27015/udp
     command:
       - -port 27015 -game cstrk61 +map de_dust +maxplayers 16
