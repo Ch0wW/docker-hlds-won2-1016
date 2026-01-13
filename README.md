@@ -15,7 +15,8 @@ This project creates a Docker image that automates setting up a Half-Life dedica
 - Either `docker` (easier to set up) **__OR__** `podman` version 5.4.2 or above (advanced but more secure).
 
 > [!TIP]
-> We will have to create a new user for safety reasons ; I recommend naming the freshly created user `hluser`, as that is the one I will use throughout the installation guide ! Also, we assume you are using Debian 13 as your Linux OS. If not, please adapt some commands to your needs. 
+> - We will have to create a new user for safety reasons ; **I recommend naming the freshly created user `hluser`, as that is the one I will use throughout the installation guide** ! 
+> - Also, we assume you are using Debian 13 as your Linux OS. If not, please adapt some commands to your needs. 
 
 ### Why making this project ?
 
