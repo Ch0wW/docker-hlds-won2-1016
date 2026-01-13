@@ -108,8 +108,8 @@ loginctl enable-linger hluser
 
 5) We'll set proper permissions for later, so that our user `hluser` will still have access to files later on on the `config` subdirectories. This will fix new files permissions for both the container & our user, as well as allowing custom sprays to be saved.
 ```sh
-setfacl -R -d -m u:hluser:rwx ~/docker-hlds-won2-1016/config/*
-setfacl -R -m u:hluser:rwx ~/docker-hlds-won2-1016/config/*
+setfacl -R -m d:u:hluser:rwx ./config/*
+setfacl -R -m u:hluser:rwx ./config/*
 ```
 
 6) Build the image required for the server (will take ~5 minutes)
@@ -133,7 +133,7 @@ If you need to change the port of your server, change the `-port 27015` paramete
 
 For instance, here is a container file (= *quadlet*) which will create a CS Beta 6.1 server on cs_assault on port 27010 with 32 players slots: 
 
-```systemd
+```ini
 [Unit]
 Description=HLDS 1.0.1.6 (WON2) Server
 Wants=network-online.target
