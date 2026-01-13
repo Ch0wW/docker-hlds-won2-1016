@@ -64,7 +64,8 @@ cp docker-compose.yml docker-compose.override.yml
 > [!CAUTION]
 > You need to set the UID/GID of the user you have created (using the command `id`), and replace it in the `user:"1000:1000"` part ; **otherwise you will have permission issues**.
 
-The commandline that is used to start the server is located in the `command` part. 
+>[!NOTE]
+> The commandline that is used to start the server is located in the `command` part. 
 
 If you need to change the port of your server, change the `-port 27015` parameter (in the `command` section) with the desired port of your choice.
 
@@ -125,7 +126,8 @@ cp hlds1016.container ~/.config/containers/systemd/
 
 8) Edit `~/.config/containers/systemd/hlds1016.container` to your likings.
 
-The commandline that is used to start the server is located in the `Exec` part. 
+>[!NOTE]
+> The commandline that is used to start the server is located in the `Exec` part. 
 
 If you need to change the port of your server, change the `-port 27015` parameter (in the `command` section) with the desired port of your choice.
 
@@ -157,7 +159,7 @@ TimeoutSec=10
 WantedBy=multi-user.target
 ```
 
-7) Refresh the systemd services & containers, then start the server.
+9) Refresh the systemd services & containers, then start the server.
 ```bash
 systemctl --user daemon-reload
 systemctl --user start hlds1016
