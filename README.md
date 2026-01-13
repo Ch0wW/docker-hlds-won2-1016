@@ -98,7 +98,11 @@ In case you need to rebuild the image (for advanced purposes only), just type `d
 sudo apt install podman acl
 ```
 
-1) First of all, make sure you have created the `hluser` user on your server. Don't forget to add subuid/subgid support (`usermod --add-subuids 100000-165535 --add-subgids 100000-165535 hluser`)
+1) First of all, make sure you have created the `hluser` user on your server. Don't forget to add subuid/subgid support:
+```bash
+adduser hluser
+usermod --add-subuids 100000-165535 --add-subgids 100000-165535 hluser
+```
 
 2) As `root`, we will enable lingering for our user (so that the server will still be active when not connected through SSH): 
 ```bash
