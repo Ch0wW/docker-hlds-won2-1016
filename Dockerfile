@@ -10,25 +10,26 @@ USER hlds
 
 # 3) Install HLDS 3.0.1.6
 COPY install/hlds_l3016.tar.gz /server/
-RUN tar -xzf /server/hlds_l3016.tar.gz -C /server && rm /server/hlds_l3016.tar.gz
+WORKDIR /server/
+RUN tar -xzf ./hlds_l3016.tar.gz -C /tmp && rm ./hlds_l3016.tar.gz
 
 # Move back one folder
-RUN mv /server/hlds_l/* /server/
+RUN mv /tmp/hlds_l/* ./
 
 #Copy required files
-COPY install/nowon.so /server/
-COPY install/hlds_start /server/
+COPY install/nowon.so ./
+COPY install/hlds_start ./
 
 #-------------------------------
-WORKDIR /server/
+
 
 USER root
 
 # INSTALL modified HLDS_RUN
-COPY ./install/hlds_start /server/
-COPY ./install/nowon.so /server/
-COPY ./install/booster.so /server/
-COPY ./install/nowon_patch.sh /server/
+COPY install/hlds_start ./
+COPY install/nowon.so ./
+COPY install/booster.so ./
+COPY install/nowon_patch.sh ./
 
 RUN chmod +x nowon_patch.sh
 RUN ./nowon_patch.sh

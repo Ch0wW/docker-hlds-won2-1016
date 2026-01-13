@@ -134,7 +134,7 @@ Image=localhost/hlds1016
 Network=host
 
 # Volumes
-Volume=%h/docker-hlds-won2-1016/config/cstrk61:/server/cstrk61:z,U
+Volume=%h/docker-hlds-won2-1016/config/cstrk61:/server/cstrk61:z
 
 # Command user
 Exec=-port 27010 -game cstrk61 +map cs_assault +maxplayers 32
