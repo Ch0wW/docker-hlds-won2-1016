@@ -132,6 +132,7 @@ After=network-online.target
 [Container]
 Image=localhost/hlds1016
 Network=host
+PodmanArgs=-it
 
 # Volumes
 Volume=%h/docker-hlds-won2-1016/config/cstrk61:/server/cstrk61:z

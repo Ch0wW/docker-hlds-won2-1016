@@ -1,7 +1,10 @@
-FROM docker.io/i386/debian:12.4-slim
+FROM docker.io/i386/debian:8-slim
+
+# Force an update for Debian 8 sources 
+RUN echo "deb http://archive.debian.org/debian jessie main contrib non-free" > /etc/apt/sources.list
 
 # 1) INSTALL BASICS
-RUN apt-get update && apt-get upgrade -y && apt-get install -y wget libc6 libstdc++6 xxd --force-yes
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget libc6 libstdc++6 xxdiff --force-yes
 
 # 2) Create user
 RUN groupadd -r hlds
