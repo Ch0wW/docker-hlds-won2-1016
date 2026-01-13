@@ -5,8 +5,6 @@
 
 This project creates a Docker image that automates setting up a Half-Life dedicated server, version 1.0.1.6 (also known as **Protocol 40**), using the WON2 protocol. This image also includes popular Counter-Strike beta mods compatible with this build of Half-Life that are still played by the community, which are Counter-Strike Beta 3.1, Beta 4.0, Beta 5.2, and Beta 6.1.
 
-**Please note this project is done independently of CS-Legacy or any o.**
-
 #### Related projects
 - [Docker/Podman image for HLDS 1.1.1.0](https://github.com/Ch0wW/docker-hlds-won2)
 
@@ -17,7 +15,7 @@ This project creates a Docker image that automates setting up a Half-Life dedica
 - Either `docker` (easier to set up) **__OR__** `podman` version 5.4.2 or above (advanced but more secure).
 
 > [!TIP]
-> We will have to create a new user for safety reasons ; I recommend naming the freshly created user `hluser`, as that is the one I will use throughout the installation guide !
+> We will have to create a new user for safety reasons ; I recommend naming the freshly created user `hluser`, as that is the one I will use throughout the installation guide ! Also, we assume you are using Debian 13 as your Linux OS. If not, please adapt some commands to your needs. 
 
 ### Why making this project ?
 
@@ -90,7 +88,10 @@ In case you need to rebuild the image (for advanced purposes only), just type `d
 
 ## Podman installation
 
-0) If not already done, install Podman.
+0) If not already done, install Podman. If you also have package `acl`, it's a good time to install it as well.
+```sh
+sudo apt install podman acl
+```
 
 1) First of all, make sure you have created the `hluser` user on your server. Don't forget to add subuid/subgid support (`usermod --add-subuids 100000-165535 --add-subgids 100000-165535 hluser`)
 
@@ -103,25 +104,31 @@ loginctl enable-linger hluser
 
 4) Clone the project, and enter the project's directory.
 
-5) Build the image required for the server (will take ~5 minutes)
+5) We'll set proper permissions for later, so that our user `hluser` will still have access to files later on on the `config` subdirectories. This will fix new files permissions for both the container & our user, as well as allowing custom sprays to be saved.
+```sh
+setfacl -R -d -m u:hluser:rwx ~/docker-hlds-won2-1016/config/*
+setfacl -R -m u:hluser:rwx ~/docker-hlds-won2-1016/config/*
+```
+
+6) Build the image required for the server (will take ~5 minutes)
 ```sh
 podman build -t hlds1016:latest .
 ```
 
-6) We will create the subfolders required for a rootless podman configuration, and copy the container inside it.
+7) We will create the subfolders required for a rootless podman configuration, and copy the container inside it.
 
 ```bash
 mkdir -p ~/.config/containers/systemd
 cp hlds1016.container ~/.config/containers/systemd/
 ```
 
-7) Edit `~/.config/containers/systemd/hlds1016.container` to your likings.
+8) Edit `~/.config/containers/systemd/hlds1016.container` to your likings.
 
 The commandline that is used to start the server is located in the `Exec` part. 
 
 If you need to change the port of your server, change the `-port 27015` parameter (in the `command` section) with the desired port of your choice.
 
-For instance, here is a container file which will create a CS Beta 6.1 server on cs_assault on port 27010 with 32 players slots: 
+For instance, here is a container file (= *quadlet*) which will create a CS Beta 6.1 server on cs_assault on port 27010 with 32 players slots: 
 
 ```systemd
 [Unit]
@@ -133,6 +140,7 @@ After=network-online.target
 Image=localhost/hlds1016
 Network=host
 PodmanArgs=-it
+UserNS=keep-id
 
 # Volumes
 Volume=%h/docker-hlds-won2-1016/config/cstrk61:/server/cstrk61:z
@@ -148,22 +156,18 @@ TimeoutSec=10
 WantedBy=multi-user.target
 ```
 
-7) Refresh the systemd services & containers.
+7) Refresh the systemd services & containers, then start the server.
 ```bash
 systemctl --user daemon-reload
-```
-
-8) Start the server.
-```bash
 systemctl --user start hlds1016
 ```
 
 > [!NOTE]
 > - You will have to make one container file per server. 
-> - If the service does not work, you can have a basic idea of what's wrong with this command : `/usr/libexec/podman/quadlet -dryrun -user`
+> - If the service is not properly detected by podman/systemd, you can have a basic idea of what's wrong with this command : `/usr/libexec/podman/quadlet -dryrun -user`
 
 > [!WARNING]
-> Due to how systemd works, if you changed anything within the container file or created a new container, you will have to type `systemctl --user daemon-reload` in order to refresh the files. 
+> Due to how systemd works, if you changed anything within the quadlet, or created a new quadlet, you will have to type `systemctl --user daemon-reload` in order to refresh the files. 
 
 ## Customizing your server configuration
 Simply go to the `config` folder, and modify the required folders you wish.
@@ -188,6 +192,9 @@ Simply go to the `config` folder, and modify the required folders you wish.
 
 ### Why is there no presence of CS Beta 1.x, 2.x?
 **Simply because these versions do not have Linux builds available**! You can verify them all on this [GitHub repository](https://github.com/Ch0wW/counterstrike-betas) if you need more information.
+
+### How can I access RCON if the port is not the default one (i.e. 27015) ? Either it rejects it, or it says bad password despite being correct.
+By default, Half-Life 1.0.1.6 clients **assume** that the rcon port used for remote access is 27015. You will have to use `rcon_port "27016"` (adapt 27016 to your server port) to make it work.
 
 > [!WARNING]
 > A WINE image is in the works for hosting these missing builds on Linux !
