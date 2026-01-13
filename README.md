@@ -1,4 +1,4 @@
-# Half-Life Dedicated Server v1.0.1.6 (WON2/Protocol 46) Image for Docker/Podman
+# Half-Life Dedicated Server v1.0.1.6 (WON2/Protocol 40) Image for Docker/Podman
 
 [![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://patreon.baseq.fr)
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P27UZHV)
