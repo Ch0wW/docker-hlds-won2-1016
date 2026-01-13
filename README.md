@@ -43,7 +43,11 @@ There are a few communities around the World that still enjoy playing the early 
 
 0) If not already done, install Docker.
 
-1) First of all, make sure you have created the `hluser` user on your server. Don't forget to add the user to the `docker` group (`usermod -aG docker hluser`)
+1) First of all, make sure you have created the `hluser` user on your server. Don't forget to add the user to the `docker` group:
+```bash
+adduser hluser
+usermod -aG docker hluser
+```
 
 2) Log in as `hluser`.
 ```bash
