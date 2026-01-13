@@ -1,0 +1,24 @@
+[Unit]
+Description=HLDS 1.0.1.6 (WON2) Server
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=localhost/hlds1016
+Network=host
+
+# Volumes
+Volume=%h/docker-hlds-won2-1016/config/cstrk61:/server/cstrk61:z,U
+Volume=%h/docker-hlds-won2-1016/config/cstrk52:/server/cstrk52:z,U
+Volume=%h/docker-hlds-won2-1016/config/cstrk40:/server/cstrk40:z,U
+Volume=%h/docker-hlds-won2-1016/config/cstrk31:/server/cstrk31:z,U
+
+# Command user
+Exec=-port 27015 -game cstrk61 +map de_dust +maxplayers 16
+
+[Service]
+Restart=on-failure
+TimeoutSec=10
+
+[Install]
+WantedBy=multi-user.target

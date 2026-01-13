@@ -1,4 +1,4 @@
-FROM i386/debian:12.4-slim
+FROM docker.io/i386/debian:12.4-slim
 
 # 1) INSTALL BASICS
 RUN apt-get update && apt-get upgrade -y && apt-get install -y wget libc6 libstdc++6 xxd --force-yes
@@ -12,20 +12,23 @@ USER hlds
 COPY install/hlds_l3016.tar.gz /server/
 RUN tar -xzf /server/hlds_l3016.tar.gz -C /server && rm /server/hlds_l3016.tar.gz
 
+# Move back one folder
+RUN mv /server/hlds_l/* /server/
+
 #Copy required files
-COPY install/nowon.so /server/hlds_l/
-COPY install/hlds_start /server/hlds_l/
+COPY install/nowon.so /server/
+COPY install/hlds_start /server/
 
 #-------------------------------
-WORKDIR /server/hlds_l/
+WORKDIR /server/
 
 USER root
 
 # INSTALL modified HLDS_RUN
-COPY ./install/hlds_start /server/hlds_l/
-COPY ./install/nowon.so /server/hlds_l/
-COPY ./install/booster.so /server/hlds_l/
-COPY ./install/nowon_patch.sh /server/hlds_l/
+COPY ./install/hlds_start /server/
+COPY ./install/nowon.so /server/
+COPY ./install/booster.so /server/
+COPY ./install/nowon_patch.sh /server/
 
 RUN chmod +x nowon_patch.sh
 RUN ./nowon_patch.sh

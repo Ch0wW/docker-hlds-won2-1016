@@ -1,15 +1,12 @@
 services:
-  hlds:
-    build: .
+  hlds-server:
     image: "hlds1016"
     network_mode: host
-    user: "1000:1000" # <- Change this to your UID:GID
+    user: "1000:1000" # <- IMPORTANT !! Change this to your UID:GID to fix potential permission issues !
     volumes:
-      - ./config/cstrk52:/server/hlds_l/cstrk52 
-      - ./config/cstrk61:/server/hlds_l/cstrk61
-      - ./config/cstrk40:/server/hlds_l/cstrk40 
-      - ./config/cstrk31:/server/hlds_l/cstrk31 
+      - ./config/cstrk52:/server/cstrk52 
+      - ./config/cstrk61:/server/cstrk61
+      - ./config/cstrk40:/server/cstrk40 
+      - ./config/cstrk31:/server/cstrk31 
     command:
-      - -port 27015 -game cstrk61 +map de_dust +maxplayers 16
-    security_opt:
-      - no-new-privileges:1
+      - -port 27015 -game cstrk61 +map cs_assault +maxplayers 16
