@@ -127,9 +127,9 @@ usermod --add-subuids 100000-165535 --add-subgids 100000-165535 hluser
 loginctl enable-linger hluser
 ```
 
-3) In a **new SSH connection**, connect as `hluser`.
+3) In a **new SSH connection**, connect as `hluser`. if you're not in your home directory, type the following: `cd ~`
 
-4) Clone the project, and enter the project's directory.
+4) Clone the project, and enter the project's directory. (`git clone https://github.com/Ch0wW/docker-hlds-won2-1016.git`)
 
 5) We'll set proper permissions for later, so that our user `hluser` will still have access to files later on on the `config` subdirectories. This will fix new files permissions for both the container & our user, as well as allowing custom sprays to be saved.
 ```sh
@@ -223,6 +223,9 @@ Simply go to the `config` folder, and modify the required folders you wish.
 
 ### How can I access RCON if the port is not the default one (i.e. 27015) ? Either it rejects it, or it says bad password despite being correct.
 By default, Half-Life 1.0.1.6 clients **assume** that the rcon port used for remote access is 27015. You will have to use `rcon_port "27016"` (adapt 27016 to your server port) to make it work.
+
+### Can you set me up a server?
+🔒 **I can**, but I offer direct support for Gold Tier members on Patreon only. Please note you still need to rent or own a server beforehand, something I can't do for you.
 
 > [!WARNING]
 > A WINE image is in the works for hosting these missing builds on Linux !
