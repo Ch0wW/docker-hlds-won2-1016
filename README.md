@@ -215,6 +215,12 @@ Simply go to the `config` folder, and modify the required folders you wish.
 ### Do I have to include +sv_lan 1?
 ❌ **No need to** ! It's already included inside `hlds_start` (which is basically a renamed `hlds_run` script), so you don't have to!
 
+### Why are you naming the CS beta folders "cstrkxx" instead of "cstrike"?
+I am using the new [community namings](https://github.com/Ch0wW/counterstrike-betas) that has been agreed with the WON communities in order to differenciate all versions of Counter-Strike WON and remove the need to rename the folder every single time you want to play a distinct build of Counter-Strike. Modern client packages already use the updated folder namings, but older packages might not.
+
+### Does it work with ARM servers?
+❌ **NO**. You need a x64 server, which is what most servers provide. An ARM->x86 emulator might work, but is entirely outside the scope of this project.
+
 ### Will this work natively with that Half-Life 1.0.1.6 package I found online?
 ✅ **Of course**! This project will register your dedicated server to both the WON2.NET and the Order of Phalanx masterservers!
 
