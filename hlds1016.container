@@ -19,7 +19,7 @@ Volume=%h/docker-hlds-won2-1016/config/cstrk31:/server/cstrk31:z
 Exec=-port 27015 -game cstrk61 +map de_dust +maxplayers 16
 
 [Service]
-Restart=on-failure
+Restart=always
 TimeoutSec=10
 
 [Install]

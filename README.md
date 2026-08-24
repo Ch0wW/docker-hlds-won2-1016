@@ -1,9 +1,19 @@
 # Half-Life Dedicated Server v1.0.1.6 (WON2/Protocol 40) Image for Docker/Podman
 
 [![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://patreon.baseq.fr)
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P27UZHV)
 
 This project creates a Docker image that automates setting up a Half-Life dedicated server, version 1.0.1.6 (also known as **Protocol 40**), using the WON2 protocol. This image also includes popular Counter-Strike beta mods compatible with this build of Half-Life that are still played by the community, which are Counter-Strike Beta 3.1, Beta 4.0, Beta 5.2, and Beta 6.1.
+
+## Disclaimer
+**I am NOT responsible if your computer, server or game client has issues upon using this repository. You are basically attempting to host an unsupported, obsolete build of Half-Life that is ~25 years old and might have serious vulnerabilities**. This repository makes you able to host a server with minimal efforts, but you are, in other words, on your own.
+
+> [!WARNING]
+> This image won't work for CS Beta 1.X, 2.X and many others. Read the FAQ at the bottom of this page for more info.
+
+## Need support?
+**I can offer you direct support in making a server for CSWON2, however this is only restricted for Gold Tier members on Patreon.**
+
+[![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://patreon.baseq.fr)
 
 #### Related projects
 - [Docker/Podman image for HLDS 1.1.1.0](https://github.com/Ch0wW/docker-hlds-won2)
@@ -69,7 +79,13 @@ cp docker-compose.yml docker-compose.override.yml
 6) Edit `docker-compose.override.yml` to your likings.
 
 > [!CAUTION]
-> You need to set the UID/GID of the user you have created (using the command `id`), and replace it in the `user:"1000:1000"` part ; **otherwise you will have permission issues**.
+> You need to set the UID/GID of the user you have created (using the command `id`), and replace it in the `user:"1000:1000"` part ; **otherwise you will have permission issues** regarding sprays.
+>
+> For instance, if you have the following:
+> `uid=1012(hluser) gid=1013(hluser) groups=1013(hluser)`
+> 
+> You will write the following:
+> `user:"1012:1013"`
 
 >[!NOTE]
 > The commandline that is used to start the server is located in the `command` part. 
@@ -142,7 +158,7 @@ cp hlds1016.container ~/.config/containers/systemd/
 
 If you need to change the port of your server, change the `-port 27015` parameter (in the `command` section) with the desired port of your choice.
 
-For instance, here is a container file (= *quadlet*) which will create a CS Beta 6.1 server on cs_assault on port 27010 with 32 players slots: 
+For instance, here is a container file (= *quadlet*) which will create a CS Beta 6.1 server on cs_assault on port 27010 with 32 player slots: 
 
 ```ini
 [Unit]
@@ -163,7 +179,7 @@ Volume=%h/docker-hlds-won2-1016/config/cstrk61:/server/cstrk61:z
 Exec=-port 27010 -game cstrk61 +map cs_assault +maxplayers 32
 
 [Service]
-Restart=on-failure
+Restart=always
 TimeoutSec=10
 
 [Install]
@@ -218,4 +234,3 @@ By default, Half-Life 1.0.1.6 clients **assume** that the rcon port used for rem
 This project uses files copyrighted by VALVe. 
 
 [![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://patreon.baseq.fr)
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P27UZHV)
