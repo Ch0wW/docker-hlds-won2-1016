@@ -1,7 +1,5 @@
 # Half-Life Dedicated Server v1.0.1.6 (WON2/Protocol 40) Image for Docker/Podman
 
-[![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://patreon.baseq.fr)
-
 This project creates a Docker image that automates setting up a Half-Life dedicated server, version 1.0.1.6 (also known as **Protocol 40**), using the WON2 protocol. This image also includes popular Counter-Strike beta mods compatible with this build of Half-Life that are still played by the community, which are Counter-Strike Beta 3.1, Beta 4.0, Beta 5.2, and Beta 6.1.
 
 ## Disclaimer
