@@ -98,6 +98,7 @@ services:
     image: "hlds1016"
     network_mode: host
     user: "1000:1000" # <- IMPORTANT !! Change this to your UID:GID to fix potential permission issues !
+    restart: always
     volumes:
       - ./config/cstrk61:/server/cstrk61
     command:
