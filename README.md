@@ -208,7 +208,7 @@ Simply go to the `config` folder, and modify the required folders you wish.
 
 > [!NOTE]
 > Since no playerbase exists for Half-Life WON2 (people play it on STEAM instead), none of the system files have been included. 
-> If you still want to include custom data or config for a Half-Life 1 server, simply add whatever you wish inside the folder, and rebuild the image.
+> If you still want to include custom data or config for a Half-Life 1 server, simply add whatever you wish inside the `config/valve` folder, and rebuild the image. 
 
 # Frequently Asked Questions
 
@@ -219,9 +219,9 @@ Simply go to the `config` folder, and modify the required folders you wish.
 I am using the new [community namings](https://github.com/Ch0wW/counterstrike-betas) that has been agreed with the WON communities in order to differenciate all versions of Counter-Strike WON and remove the need to rename the folder every single time you want to play a distinct build of Counter-Strike. Modern client packages already use the updated folder namings, but older packages might not.
 
 ### Does it work with ARM servers?
-❌ **NO**. You need a x64 server, which is what most servers provide. An ARM->x86 emulator might work, but is entirely outside the scope of this project.
+❌ **NO**. You need a x64 server, which is what most servers provide. An ARM->x86 emulator might *potentially* work, but is entirely outside the scope of this project and won't be covered.
 
-### Will this work natively with that Half-Life 1.0.1.6 package I found online?
+### Will this work natively with 'that' Half-Life 1.0.1.6 package I found online?
 ✅ **Of course**! This project will register your dedicated server to both the WON2.NET and the Order of Phalanx masterservers!
 
 ### Why is there no presence of CS Beta 1.x, 2.x?
