@@ -19,6 +19,7 @@ Auth
 
 Master
 {
+	hlmaster.baseq.fr:27010
 	hlmaster.order-of-phalanx.net:27010
 	hlmaster2.order-of-phalanx.net:27010
 	hlmaster3.order-of-phalanx.net:27010

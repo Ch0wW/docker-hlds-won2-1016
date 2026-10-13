@@ -2,6 +2,7 @@
 
 # NO-WON for Linux HLDS 3.0.1.6
 # By Tomas Janousek <tomi@nomi.cz>
+# Additional code by Ch0wW <hello@ch0ww.fr>
 
 # check binary
 if ! echo '929531ac99001405b81473ca57850c54  hlds_l' | md5sum --check >/dev/null 2>&1 ; then
